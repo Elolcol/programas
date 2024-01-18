@@ -11,7 +11,7 @@ const { title, image, description, url } = Astro.props;
 ---
 
 <article
-  class="grid place-items-center gap-2 h-auto max-w-full rounded-xl p-3 border-card-border bg-card-background border-2"
+  class="grid place-items-center gap-2 h-fit max-w-full rounded-xl p-3 border-card-border bg-card-background border-2"
 >
   <Link url={url}>
     <slot name="icon" />
