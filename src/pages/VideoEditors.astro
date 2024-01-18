@@ -1,0 +1,22 @@
+---
+import Grid from "../components/Grid.astro";
+import GridContainter from "../components/GridContainter.astro";
+import GridItem from "../components/GridItem.astro";
+import AdobePremiere from "../icons/AdobePremiere.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Programs">
+  <Grid>
+    <GridContainter>
+      <GridItem
+        url="https://www.adobe.com/products/premiere.html"
+        title="Adobe Premiere"
+        image="https://cc-prod.scene7.com/is/image/CCProdAuthor/SWNCD-Pr-Pro-pod4?$pjpeg$&jpegSize=100&wid=584"
+        text="Edición de videos de una calidad siempre superior. Edita, recorta y elabora tus videos. Agrega transiciones y efectos. Refina el color. Mezcla audio. Crea títulos animados. Consigue todas las herramientas que necesitas para contar tu historia."
+      >
+        <AdobePremiere slot="icon" />
+      </GridItem>
+    </GridContainter>
+  </Grid>
+</Layout>

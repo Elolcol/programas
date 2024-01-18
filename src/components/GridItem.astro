@@ -1,14 +1,27 @@
 ---
+import ExternalLink from "../icons/ExternalLink.svg";
+import Link from "./Link.astro";
 interface Props {
   title: "string";
+  image: "string";
+  text: "string";
+  url: "string";
 }
 
-const { title } = Astro.props;
+const { title, image, text, url } = Astro.props;
 ---
 
 <article
-  class="h-fit max-w-full rounded-xl p-3 border-card-border bg-card-background border-2"
+  class="grid place-items-center gap-2 h-auto max-w-full rounded-xl p-3 border-card-border bg-card-background border-2"
 >
-  <h1 class="text-xl font-semibold text-center max-md:text-base">{title}</h1>
-  <slot />
+  <Link url={url}>
+    <slot name="icon" />
+    <h1 class="text-xl/[1rem] font-semibold text-center text-balance">
+      {title}
+    </h1>
+  </Link>
+  <picture class="rounded-lg overflow-hidden">
+    <img src={image} alt={title} class="w-full h-full object-cover" />
+  </picture>
+  <p class="overflow-hidden break-words w-full text-pretty">{text}</p>
 </article>
