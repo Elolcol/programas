@@ -3,6 +3,7 @@ import Grid from "../components/Grid.astro";
 import GridContainter from "../components/GridContainter.astro";
 import GridItem from "../components/GridItem.astro";
 import AdobePremiere from "../icons/AdobePremiere.astro";
+import DavinciResolve from "../icons/DavinciResolve.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -13,9 +14,17 @@ import Layout from "../layouts/Layout.astro";
         url="https://www.adobe.com/products/premiere.html"
         title="Adobe Premiere"
         image="https://cc-prod.scene7.com/is/image/CCProdAuthor/SWNCD-Pr-Pro-pod4?$pjpeg$&jpegSize=100&wid=584"
-        text="Edición de videos de una calidad siempre superior. Edita, recorta y elabora tus videos. Agrega transiciones y efectos. Refina el color. Mezcla audio. Crea títulos animados. Consigue todas las herramientas que necesitas para contar tu historia."
+        description="Edición de videos de una calidad siempre superior. Edita, recorta y elabora tus videos. Agrega transiciones y efectos. Refina el color. Mezcla audio. Crea títulos animados. Consigue todas las herramientas que necesitas para contar tu historia."
       >
         <AdobePremiere slot="icon" />
+      </GridItem>
+      <GridItem
+        url="https://www.blackmagicdesign.com/products/davinciresolve"
+        title="Davinci Resolve"
+        image="https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/cut.jpg"
+        description="DaVinci Resolve es la única solución del mercado que combina herramientas profesionales para editar, etalonar, componer efectos visuales, crear animaciones gráficas y mezclar audio en un solo programa. Su interfaz moderna es sumamente sencilla de usar, ideal para principiantes, pero también muy completa para profesionales. Además, el programa permite llevar a cabo dinámicas de trabajo más rápidas y con mayor calidad, gracias a que no es necesario aprender a utilizar múltiples aplicaciones o cambiar de software. Esto significa que es posible procesar imágenes originales provenientes de la cámara durante todo el proceso. Es como tener tu propio estudio de posproducción en una sola aplicación. Lo mejor es que DaVinci Resolve ofrece las mismas herramientas que emplean los profesionales de Hollywood."
+      >
+        <DavinciResolve slot="icon" />
       </GridItem>
     </GridContainter>
   </Grid>

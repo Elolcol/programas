@@ -3,11 +3,11 @@ import Link from "./Link.astro";
 interface Props {
   title: "string";
   image: "string";
-  text: "string";
+  description: "string";
   url: "string";
 }
 
-const { title, image, text, url } = Astro.props;
+const { title, image, description, url } = Astro.props;
 ---
 
 <article
@@ -22,5 +22,5 @@ const { title, image, text, url } = Astro.props;
   <picture class="rounded-lg overflow-hidden">
     <img src={image} alt={title} class="w-full h-full object-cover" />
   </picture>
-  <p class="overflow-hidden break-words w-full text-pretty">{text}</p>
+  <p class="overflow-hidden break-words w-full text-pretty">{description}</p>
 </article>
