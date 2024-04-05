@@ -17,4 +17,4 @@ Para añadir una tarjeta nueva ir a src/pages y ahi estaran las paginas segun la
 
 Los <GridContainer > son como los separadores por fila (maximo de 4 NO TOCAR NI BORRAR) adentro estan los <GridItem > 
 
--[ ] Ocupar json para añadir mas facilmente los programas
+- [] Ocupar json para añadir mas facilmente los programas
