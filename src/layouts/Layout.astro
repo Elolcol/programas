@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/onest";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "@/components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -28,7 +28,6 @@ import Navbar from "../components/Navbar.astro";
 <style is:global>
   :root {
     scrollbar-gutter: stable both-edges;
-    color-scheme: light dark;
     font-family:
       "Onest Variable",
       system-ui,
@@ -42,6 +41,7 @@ import Navbar from "../components/Navbar.astro";
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+    color: #fff;
   }
 
   img {
