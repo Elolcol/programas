@@ -7,12 +7,11 @@ interface Props {
   url?: string;
   title?: string;
   image?: string;
-  video?: string;
   model?: string[];
   description?: string;
 }
 
-const { title, image, model, description, url, video } = Astro.props;
+const { title, image, model, description, url } = Astro.props as Props;
 
 const getIcon = (title: string) => {
   const formattedTitle = title.replace(/\s+/g, "").toLowerCase();
@@ -42,34 +41,17 @@ const selectedIcon = title ? getIcon(title) : null;
       {title}
     </h3>
   </Link>
-  {
-    image ? (
-      <picture>
-        <img
-          src={image}
-          alt={`${title} - Imagen`}
-          aria-label={`${title} - Imagen`}
-          title={`${title} - Imagen`}
-          loading="lazy"
-          width="160"
-          height="90"
-        />
-      </picture>
-    ) : (
-      <picture>
-        <video
-          width="160"
-          height="90"
-          src={video}
-          aria-label={`${title} - Video`}
-          title={`${title} - Video`}
-          autoplay
-          muted
-          loop
-        />
-      </picture>
-    )
-  }
+  <picture>
+    <img
+      src={image}
+      alt={`${title} - Imagen`}
+      aria-label={`${title} - Imagen`}
+      title={`${title} - Imagen`}
+      loading="lazy"
+      width="160"
+      height="90"
+    />
+  </picture>
   <div>
     {model?.map((modelItem) => <span>{modelItem}</span>)}
   </div>
