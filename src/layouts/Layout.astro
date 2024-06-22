@@ -4,51 +4,77 @@ import Navbar from "@/components/Navbar.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Programs</title>
+    <meta charset="UTF-8" />
+    <title>Programas</title>
+    <meta
+      name="description"
+      content="Esta pagina se encarga de recopilar programas y herramientas."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://programs-6of.pages.dev/" />
   </head>
-  <body
-    class="flex flex-col justify-center items-center gap-14 bg-main-background p-5"
-  >
-    <a href="/">
-      <h1 class="text-6xl text-center font-bold max-md:text-4xl">Programs</h1>
-    </a>
+  <body>
     <Navbar />
     <main>
       <slot />
     </main>
+    <style is:global>
+      :root {
+        --main-background: #2d3250;
+        --card-background: #424769;
+        --card-border: #7077a1;
+        --text-hover: #f6b17a;
+        --white: #ffffff;
+        --black: #000000;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        appearance: none;
+        text-decoration: none;
+        transition: all 0.05s ease;
+      }
+
+      html {
+        scrollbar-gutter: stable both-edges;
+        font-family:
+          "Onest Variable",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        color: #fff;
+        background: var(--main-background);
+      }
+
+      body {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+      }
+
+      main {
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    scrollbar-gutter: stable both-edges;
-    font-family:
-      "Onest Variable",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    color: #fff;
-  }
-
-  img {
-    transition: all 0.1s ease-in-out;
-  }
-
-  article:hover img {
-    scale: 1.2;
-  }
-</style>

@@ -1,0 +1,25 @@
+---
+import Card from "@/components/Card.astro";
+import Grid from "@/components/Grid.astro";
+import Layout from "@/layouts/Layout.astro";
+import * as programsData from "@/pages/video-editors/index.json";
+---
+
+<Layout>
+  <h1>Editores de video</h1>
+  <Grid>
+    {
+      programsData.programs.map((program) => (
+        <Card
+          key={program.title}
+          url={program.url}
+          title={program.title}
+          image={program.image}
+          video={program.video}
+          model={program.model}
+          description={program.description}
+        />
+      ))
+    }
+  </Grid>
+</Layout>

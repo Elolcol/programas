@@ -1,5 +1,5 @@
 {
-  "name": "programs",
+  "name": "programas",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.2",
     "astro": "^4.1.1",
-    "tailwindcss": "^3.4.1",
+    "simple-icons": "^12.3.0",
     "typescript": "^5.3.3"
   }
 }

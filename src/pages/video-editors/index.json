@@ -1,0 +1,11 @@
+{
+  "programs": [
+    {
+      "title": "Davinci Resolve",
+      "image": "https://images.blackmagicdesign.com/images/products/davinciresolve/overview/cut/cut-xl.jpg?_v=1649386821",
+      "model": ["Un Solo Pago", "Gratis"],
+      "description": "Davinci Resolve es una herramienta de edición de video que ayuda a crear contenido de alta calidad en tiempo real.",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve"
+    }
+  ]
+}

@@ -1,9 +1,35 @@
----
-
----
-
-<section
-  class="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 w-full max-w-[1400px] auto-rows-auto gap-4 mx-auto"
->
+<section>
   <slot />
 </section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    padding: 1rem;
+  }
+
+  /* xlarge */
+  @media (max-width: 1280px) {
+    section {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* large */
+  @media (max-width: 1024px) {
+    section {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* small */
+  @media (max-width: 640px) {
+    section {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+</style>

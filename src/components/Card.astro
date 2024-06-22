@@ -1,0 +1,156 @@
+---
+import Link from "./Link.astro";
+import * as simpleIcons from "simple-icons";
+
+interface Props {
+  key: string;
+  url?: string;
+  title?: string;
+  image?: string;
+  video?: string;
+  model?: string[];
+  description?: string;
+}
+
+const { title, image, model, description, url, video } = Astro.props;
+
+const getIcon = (title: string) => {
+  const formattedTitle = title.replace(/\s+/g, "").toLowerCase();
+  const formattedName = `si${formattedTitle.charAt(0).toUpperCase()}${formattedTitle.slice(1)}`;
+  return (simpleIcons as any)[formattedName];
+};
+
+const selectedIcon = title ? getIcon(title) : null;
+---
+
+<article>
+  <Link url={url}>
+    {
+      selectedIcon ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill="currentColor"
+        >
+          <path d={selectedIcon.path} />
+        </svg>
+      ) : null
+    }
+    <h3>
+      {title}
+    </h3>
+  </Link>
+  {
+    image ? (
+      <picture>
+        <img
+          src={image}
+          alt={`${title} - Imagen`}
+          aria-label={`${title} - Imagen`}
+          title={`${title} - Imagen`}
+          loading="lazy"
+          width="160"
+          height="90"
+        />
+      </picture>
+    ) : (
+      <picture>
+        <video
+          width="160"
+          height="90"
+          src={video}
+          aria-label={`${title} - Video`}
+          title={`${title} - Video`}
+          autoplay
+          muted
+          loop
+        />
+      </picture>
+    )
+  }
+  <div>
+    {model?.map((modelItem) => <span>{modelItem}</span>)}
+  </div>
+  <p>{description}</p>
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    border: 2px solid var(--card-border);
+    background-color: var(--card-background);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  picture {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.1s ease-in-out;
+  }
+
+  div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  span {
+    padding: 0.5rem;
+    background-color: var(--card-border);
+    border-radius: 0.75rem;
+    text-align: center;
+    align-self: self-start;
+    font-weight: 500;
+  }
+
+  p {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    width: 100%;
+    text-wrap: pretty;
+  }
+
+  p::first-letter {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+  }
+
+  p::before {
+    content: " ";
+    padding: 0.25rem;
+  }
+
+  article:hover picture img,
+  article:hover picture video {
+    scale: 1.2;
+  }
+</style>
