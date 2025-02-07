@@ -6,6 +6,13 @@
       "model": ["Un Solo Pago", "Gratis"],
       "description": "Davinci Resolve es una herramienta de edición de video que ayuda a crear contenido de alta calidad en tiempo real.",
       "url": "https://www.blackmagicdesign.com/products/davinciresolve"
+    },
+    {
+      "title": "Adobe Premiere Pro",
+      "video": "https://www.adobe.com/creativecloud/media_183f3ecd4471d75fe22ba263bc19aebf0a9d00c22.mp4",
+      "model": ["Suscripción"],
+      "description": "Edita y recorta videos, añade efectos, mezcla audio, anima títulos, equilibra el color, potencia tu flujo de trabajo con IA y cuenta tu historia con Premiere Pro.",
+      "url": "https://www.adobe.com/products/premiere.html"
     }
   ]
 }
